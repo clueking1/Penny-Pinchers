@@ -1,0 +1,27 @@
+<header class="dashTitle">
+        <h1 class="headApName">Penny Pinchers</h1>
+</header>  
+
+<div class="dashAll">
+    {{#each budget}}
+    <div class="dashSaveTitle">
+        <div class="grocDiv"></div>
+            <h3 class="dashGroc">Groceries</h3>
+            <p class="grocBudget">{{groceries}}</p>
+        </div>
+        <div class="transDiv"></div>
+            <h3 class="dashtrans">Transportation</h3>
+            <p class="transBudget">{{transportation}}</p>
+        </div>
+        <div class="diningDiv"></div>
+            <h3 class="dashDining">Dining</h3>
+            <p class="diningBudget">{{dining}}</p>
+        </div>
+        <div class="shopDiv"></div>
+            <h3 class="dashShop">Shopping</h3>
+            <p class="shopBudget">{{shopping}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
