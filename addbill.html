@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penny Pinchers Add Bill</title>
+</head>
+<body>
+    
+    <header class="headTitle">
+        <h1 class="headApName">Penny Pinchers</h1>
+        <h3 class="headApSlogan">Who's the ultimate saver?</h3>
+    </header>  
+
+    <br>
+    <div class="main">
+        <form class="bill-form">
+            <p class="bill-header">Which category would you like to add an expense for?</p>
+            <div class="dropdown">
+                <select class="dropdown-content">
+                    <option value="1">Groceries</option>
+                    <option value="2">Transportation</option>
+                    <option value="3">Dining</option>
+                    <option value="4">Shopping</option>
+                </select>
+            </div>
+
+            <p class="amount-header">Enter the amount of the expense: </p>
+            <input class="amount" type="number" id="amount" name="amount"><br><br>
+
+            <button type="submit" class="addBill-Btn">Add Expense</button>
+        </form>
+    </div>
+
+    <div class="login">
+        <a href="./index.html" class="index"></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+</body>
+</html>
