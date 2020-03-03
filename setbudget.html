@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penny Pinchers Set Budget</title>
+</head>
+<body>
+
+
+     <header class="headTitle">
+        <h1 class="headApName">Penny Pinchers</h1>
+        <h3 class="headApSlogan">Who's the ultimate saver?</h3>
+    </header>  
+
+    <br>
+
+    <div class="main">
+        <form class="budget-form">
+            <p class="budget-header">Enter the amount you would like to budget for each category: </p>
+
+            <p class="grocery-budget">Groceries</p>
+            <div class="dollar">$<input class="grocery-input" type="number" id="groceryBudget" min="0" step="1"></div>
+
+            <p class="transportation-budget">Transportation</p>
+            <div class="dollar">$<input class="transportation-input" type="number" id="transportationInput" name="transportation-input" min="0" step="1"></div>
+
+            <p class="dining-budget">Dining</p>
+            <div class="dollar">$<input class="dining-input" type="number" id="diningInput" name="dining-input" min="0" step="1"></div>
+
+            <p class="shopping-budget">Shopping</p>
+            <div class="dollar">$<input class="shopping-input" type="number" id="shoppingInput" name="shopping-input" min="0" step="1"></div>
+
+            <br>
+
+            <button class="budget-Btn" type="submit">Submit Budget</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+</body>
+</html>
