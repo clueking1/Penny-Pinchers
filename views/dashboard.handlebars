@@ -1,0 +1,396 @@
+<header class="dashTitle">
+        <h1 class="headApName">Penny Pinchers</h1>
+</header>  
+
+<div class="dashAll">
+    {{#each budget}}
+    <div class="dashSaveTitle">
+        <div class="grocDiv"></div>
+            <h3 class="dashGroc">Groceries</h3>
+            <p class="grocBudget">{{groceries}}</p>
+        </div>
+        <div class="transDiv"></div>
+            <h3 class="dashtrans">Transportation</h3>
+            <p class="transBudget">{{transportation}}</p>
+        </div>
+        <div class="diningDiv"></div>
+            <h3 class="dashDining">Dining</h3>
+            <p class="diningBudget">{{dining}}</p>
+        </div>
+        <div class="shopDiv"></div>
+            <h3 class="dashShop">Shopping</h3>
+            <p class="shopBudget">{{shopping}}</p>
+        </div>
+    </div>
+    {{/each}}
+    <div class="graphDiv">
+        <div class="chart1Div">
+            <div id="chart1" class="chart1"></div>
+        </div>
+        <div class="chart2Div">
+            <div id="chart2" class="chart2"></div>
+        </div>
+        <div class="chart3Div">
+            <div id="chart3" class="chart3"></div>
+        </div>
+        <div class="chart4Div">
+            <div id="chart4" class="chart4"></div>
+        </div>
+        
+    </div>
+    <div class="logBillBut">
+        <a href="./logBill.html">Log Bill</a>
+    </div>
+
+     <div class="logBillBut">
+        <a href="./setBudget.html">Set Budget</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+  
+  //Chart 1 --------------------------------------
+  
+  {{#each points}}
+
+    var options = {
+        series: [Number({{groceriesPoints}})],
+        chart: {
+        height: 350,
+        type: 'radialBar',
+        toolbar: {
+        show: true
+        }
+    },
+    plotOptions: {
+        radialBar: {
+        startAngle: -135,
+        endAngle: 225,
+        hollow: {
+            margin: 0,
+            size: '70%',
+            background: '#fff',
+            image: undefined,
+            imageOffsetX: 0,
+            imageOffsetY: 0,
+            position: 'front',
+            dropShadow: {
+            enabled: true,
+            top: 3,
+            left: 0,
+            blur: 4,
+            opacity: 0.24
+            }
+        },
+        track: {
+            background: '#fff',
+            strokeWidth: '67%',
+            margin: 0, 
+            dropShadow: {
+            enabled: true,
+            top: -3,
+            left: 0,
+            blur: 4,
+            opacity: 0.35
+            }
+        },
+    
+        dataLabels: {
+            show: true,
+            name: {
+            offsetY: -10,
+            show: true,
+            color: '#888',
+            fontSize: '17px'
+            },
+            value: {
+            formatter: function(val) {
+                return parseInt(val);
+            },
+            color: '#111',
+            fontSize: '36px',
+            show: true,
+            }
+        }
+        }
+    },
+    fill: {
+        type: 'gradient',
+        gradient: {
+        shade: 'dark',
+        type: 'horizontal',
+        shadeIntensity: 0.5,
+        gradientToColors: ['#ABE5A1'],
+        inverseColors: true,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100]
+        }
+    },
+    stroke: {
+        lineCap: 'round'
+    },
+    labels: ['Points'],
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart1"), options);
+    chart.render();
+
+    //Chart 2 --------------------------------------
+
+        var options = {
+        series: [Number({{transportationPoints}})],
+        chart: {
+        height: 350,
+        type: 'radialBar',
+        toolbar: {
+        show: true
+        }
+    },
+    plotOptions: {
+        radialBar: {
+        startAngle: -135,
+        endAngle: 225,
+        hollow: {
+            margin: 0,
+            size: '70%',
+            background: '#fff',
+            image: undefined,
+            imageOffsetX: 0,
+            imageOffsetY: 0,
+            position: 'front',
+            dropShadow: {
+            enabled: true,
+            top: 3,
+            left: 0,
+            blur: 4,
+            opacity: 0.24
+            }
+        },
+        track: {
+            background: '#fff',
+            strokeWidth: '67%',
+            margin: 0, 
+            dropShadow: {
+            enabled: true,
+            top: -3,
+            left: 0,
+            blur: 4,
+            opacity: 0.35
+            }
+        },
+    
+        dataLabels: {
+            show: true,
+            name: {
+            offsetY: -10,
+            show: true,
+            color: '#888',
+            fontSize: '17px'
+            },
+            value: {
+            formatter: function(val) {
+                return parseInt(val);
+            },
+            color: '#111',
+            fontSize: '36px',
+            show: true,
+            }
+        }
+        }
+    },
+    fill: {
+        type: 'gradient',
+        gradient: {
+        shade: 'dark',
+        type: 'horizontal',
+        shadeIntensity: 0.5,
+        gradientToColors: ['#ABE5A1'],
+        inverseColors: true,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100]
+        }
+    },
+    stroke: {
+        lineCap: 'round'
+    },
+    labels: ['Points'],
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart2"), options);
+    chart.render();
+
+    //Chart 3 --------------------------------------
+
+        var options = {
+        series: [Number({{diningPoints}})],
+        chart: {
+        height: 350,
+        type: 'radialBar',
+        toolbar: {
+        show: true
+        }
+    },
+    plotOptions: {
+        radialBar: {
+        startAngle: -135,
+        endAngle: 225,
+        hollow: {
+            margin: 0,
+            size: '70%',
+            background: '#fff',
+            image: undefined,
+            imageOffsetX: 0,
+            imageOffsetY: 0,
+            position: 'front',
+            dropShadow: {
+            enabled: true,
+            top: 3,
+            left: 0,
+            blur: 4,
+            opacity: 0.24
+            }
+        },
+        track: {
+            background: '#fff',
+            strokeWidth: '67%',
+            margin: 0, 
+            dropShadow: {
+            enabled: true,
+            top: -3,
+            left: 0,
+            blur: 4,
+            opacity: 0.35
+            }
+        },
+    
+        dataLabels: {
+            show: true,
+            name: {
+            offsetY: -10,
+            show: true,
+            color: '#888',
+            fontSize: '17px'
+            },
+            value: {
+            formatter: function(val) {
+                return parseInt(val);
+            },
+            color: '#111',
+            fontSize: '36px',
+            show: true,
+            }
+        }
+        }
+    },
+    fill: {
+        type: 'gradient',
+        gradient: {
+        shade: 'dark',
+        type: 'horizontal',
+        shadeIntensity: 0.5,
+        gradientToColors: ['#ABE5A1'],
+        inverseColors: true,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100]
+        }
+    },
+    stroke: {
+        lineCap: 'round'
+    },
+    labels: ['Points'],
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart3"), options);
+    chart.render();
+
+    //Chart 4 --------------------------------------
+
+        var options = {
+        series: [Number({{shoppingPoints}})],
+        chart: {
+        height: 350,
+        type: 'radialBar',
+        toolbar: {
+        show: true
+        }
+    },
+    plotOptions: {
+        radialBar: {
+        startAngle: -135,
+        endAngle: 225,
+        hollow: {
+            margin: 0,
+            size: '70%',
+            background: '#fff',
+            image: undefined,
+            imageOffsetX: 0,
+            imageOffsetY: 0,
+            position: 'front',
+            dropShadow: {
+            enabled: true,
+            top: 3,
+            left: 0,
+            blur: 4,
+            opacity: 0.24
+            }
+        },
+        track: {
+            background: '#fff',
+            strokeWidth: '67%',
+            margin: 0, 
+            dropShadow: {
+            enabled: true,
+            top: -3,
+            left: 0,
+            blur: 4,
+            opacity: 0.35
+            }
+        },
+    
+        dataLabels: {
+            show: true,
+            name: {
+            offsetY: -10,
+            show: true,
+            color: '#888',
+            fontSize: '17px'
+            },
+            value: {
+            formatter: function(val) {
+                return parseInt(val);
+            },
+            color: '#111',
+            fontSize: '36px',
+            show: true,
+            }
+        }
+        }
+    },
+    fill: {
+        type: 'gradient',
+        gradient: {
+        shade: 'dark',
+        type: 'horizontal',
+        shadeIntensity: 0.5,
+        gradientToColors: ['#ABE5A1'],
+        inverseColors: true,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100]
+        }
+    },
+    stroke: {
+        lineCap: 'round'
+    },
+    labels: ['Points'],
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart4"), options);
+    chart.render();
+
+    
+  {{/each}}
+</script>
