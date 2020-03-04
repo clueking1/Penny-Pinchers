@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat:400,700|Exo+2&display=swap');
+html,body {
+    margin:0;
+    padding:0;
+    background: url('../images/Untitled.jpg') no-repeat center center fixed;
+   -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.headTitle {
+    border: 2px solid #bdb9b999;
+    background-color: #eae7e7ba;
+    background-color: #56412bb0;
+    box-shadow: 10px 10px 8px #bfb6b65e; 
+}
+
+.headApName {
+    font-family: 'Caveat', cursive, sans-serif;
+    font-weight: 700;
+    font-size: 2.2em;
+    color: #f9d8c0;
+    margin-left: 27%;
+}
+
+.dashAll {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 6%;
+    font-family: 'Exo 2', sans-serif;
+
+}
+
+.dashSaveTitle {
+    text-align: center;
+    position: relative;
+    width:40%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border: 2px solid #bdb9b999;
+    background-color: #eae7e7ba;
+    background-color: #886543b0;
+    box-shadow: 10px 10px 8px #bfb6b65e;
+    height: 101px;
+    margin-bottom: 0;
+    color: #f9d8c0;
+    font-size: 1.1em;
+}
+
+.grocBudget {
+    color: #544e46
+}
+
+.shopBudget {
+    color: #544e46
+}
+
+.transBudget {
+    color: #544e46
+}
+
+.diningBudget {
+    color: #544e46
+}
+
+.graphDiv {
+    margin: 0px;
+}
+
+.grocDiv {
+
+    text-align: center;
+    width: 25%;
+    float: left;
+    
+}
+
+.transDiv {
+    text-align: center;
+    width: 25%;
+    float: left
+}
+
+.diningDiv {
+    text-align: center;
+     width: 25%;
+     float: left
+}
+
+.shopDiv {
+    text-align: center;
+     width: 25%;
+     float: left
+}
+
+.graphDiv {
+
+    position: relative;
+    clear: both;
+    font-family: 'Exo 2', sans-serif;
+    color: #f9d8c0;
+    font-size: 1em;
+    text-align:center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 40%;
+    height: 178px;
+    margin-top: 1px;
+    border: 2px solid #bdb9b999;
+    background-color: #eae7e7ba;
+    background-color: #60452ab0;
+    box-shadow: 10px 10px 8px #bfb6b65e
+}
+
+.pointDiv {
+    clear: both;
+
+
+
+  
+}
+
+.point {
+    width: 40%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 21px 1px;
+    font-size: 2em;
+    border: 2px solid #bdb9b999;
+
+    background-color: #635140b0;
+    box-shadow: 10px 10px 8px #bfb6b65e;
+    color: #f9d8c0;
+    text-align: center;
+}
+
+.chart1Div {
+    width: 25%;
+     float: left
+}
+
+.chart2Div {
+    width: 25%;
+     float: left
+}
+
+.chart3Div {
+    width: 25%;
+     float: left;
+   
+}
+
+.chart4Div {
+    width: 25%;
+    float: left;
+    
+}
+
+.buts {
+    position: relative;
+    clear: both;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.logBillBut {
+
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.setBut {
+    border-left: 2px solid #ded1c7d1;
+    width: 49%;
+    float: left;
+    text-align: center;
+}
+
+.buts {
+    margin-top: 0px;
+    padding: 10px;
+    height: 36px;
+    border: 0px solid black;
+     background-color: #4c47409c;
+    text-decoration: none;
+    font-size: .8em;
+    width: 39%;
+
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2em;
+    color: #f9d8c0
+
+}
+
+a:hover {
+    color: #eab995;
+    font-size: 2.2em;
+}
