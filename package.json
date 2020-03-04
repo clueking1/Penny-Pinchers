@@ -18,6 +18,11 @@
   "homepage": "https://github.com/clueking1/Penny-Pinchers#readme",
   "dependencies": {
     "express": "^4.17.1",
+<<<<<<< HEAD
     "express-handlebars": "^3.1.0"
+=======
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.18.1"
+>>>>>>> b415d29b2d28c4ed75bce517cb987bdf23383ac1
   }
 }
