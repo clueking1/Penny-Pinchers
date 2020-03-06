@@ -72,10 +72,8 @@
     
     //Chart 1 --------------------------------------
     
-    {{#each points}}
-
         var options = {
-            series: [Number({{groceriesBudget}})],
+            series: [Number({{points.groceriesBudget}})],
             chart: {
             height: 200,
             type: 'radialBar',
@@ -160,7 +158,7 @@
         //Chart 2 --------------------------------------
 
             var options = {
-            series: [Number({{transportationBudget}})],
+            series: [Number({{points.transportationBudget}})],
             chart: {
             height: 200,
             type: 'radialBar',
@@ -245,7 +243,7 @@
         //Chart 3 --------------------------------------
 
             var options = {
-            series:  [Number({{diningBudget}})],
+            series:  [Number({{points.diningBudget}})],
             chart: {
             height: 200,
             type: 'radialBar',
@@ -330,7 +328,7 @@
         //Chart 4 --------------------------------------
 
             var options = {
-            series: [Number({{shoppingBudget}})],
+            series: [Number({{points.shoppingBudget}})],
             chart: {
             height: 200,
             type: 'radialBar',
@@ -411,8 +409,6 @@
 
         var chart = new ApexCharts(document.querySelector("#chart4"), options);
         chart.render();
-
-       {{/each}}     
 
     </script>
 </body>

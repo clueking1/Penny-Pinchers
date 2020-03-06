@@ -1,3 +1,4 @@
+console.log('Attached')
 $('.bill-form').on('submit', function (e) {
     e.preventDefault()
 
@@ -5,6 +6,8 @@ $('.bill-form').on('submit', function (e) {
         budget: $('.bill-form [name=amount]').val().trim(),
         cat: $('.dropdown-content').val()
     }
+
+    console.log(updateCat)
 
     $.ajax('/logBill', {
         type: 'PUT',
