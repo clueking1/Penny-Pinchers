@@ -1,20 +1,26 @@
+console.log('attached')
+console.log($('form.budget-form'))
 $('.budget-form').on('submit', function (e) {
+    console.log('Submitted')
     e.preventDefault()
 
     const updateBudget = {
-        budget: $('.budget-form [name=budget]').val().trim(),
-        grocery: $('.groceryBudget').val(),
-        transportation: $('.transportationBudget').val(),
-        dining: $('.diningBudget').val(),
-        shopping: $('.shoppingBudget').val()
+        
+        
+        grocery: $('.budget-form [name=grocery-input]').val().trim(),
+        transportation: $('.budget-form [name=transportation-input]').val().trim(),
+        dining: $('.budget-form [name=dining-input]').val().trim(),
+        shopping: $('.budget-form [name=shopping-input]').val().trim()
     }
+
+    console.log(updateBudget)
 
     $.ajax('/setBudget', {
         type: 'PUT',
         data: updateBudget
     }).then(
         function() {
-            location.reload()
+            console.log('DID A THING')
         }
     )
 })

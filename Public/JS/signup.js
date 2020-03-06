@@ -2,6 +2,7 @@ $('.signup-form').on('submit', function (e) {
     e.preventDefault()
 
     const signUp = {
+        userinfo: $('.form [name=user]').val().trim(),
         firstName: $('.fname').val().trim(),
         lastName: $('.lName').val().trim(),
         uName: $('.uName').val().trim(),
@@ -15,6 +16,8 @@ $('.signup-form').on('submit', function (e) {
     }).then(
         function () {
             location.reload()
+            console.log(data)
         }
+
     )
 })
