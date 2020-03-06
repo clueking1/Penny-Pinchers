@@ -101,15 +101,13 @@ app.get('/setBudget', (req, res) => {
 })
 
 app.put('/setBudget', (req, res) => {
+    console.log(req.body)
     connection.query('UPDATE user SET groceriesBudget = ?, transportationBudget = ?, diningBudget = ?, shoppingBudget = ? where userID = ?', [req.body.grocery, req.body.transportation, req.body.dining, req.body.shopping, 1], (err, data) => {
         if (err) {
             throw err
         }
         res.render('index')
-    })
-    
-})
-
+})})
 
 
 app.listen(PORT, function() {
