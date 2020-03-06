@@ -35,7 +35,7 @@ html,body {
 .dashSaveTitle {
     text-align: center;
     position: relative;
-    width:40%;
+    width: 600px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -70,50 +70,30 @@ html,body {
 }
 
 .grocDiv {
-
     text-align: center;
-    width: 25%;
     float: left;
-    
-}
+    width: 25%;
+    }
 
 .transDiv {
     text-align: center;
     width: 25%;
-    float: left
+    float: left;
 }
 
 .diningDiv {
     text-align: center;
-     width: 25%;
-     float: left
+    width: 25%;
+    float: left;
 }
 
 .shopDiv {
     text-align: center;
-     width: 25%;
-     float: left
+    width: 25%;
+    float: left;
 }
 
-.graphDiv {
-
-    position: relative;
-    clear: both;
-    font-family: 'Exo 2', sans-serif;
-    color: #f9d8c0;
-    font-size: 1em;
-    text-align:center;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 40%;
-    height: 178px;
-    margin-top: 1px;
-    border: 2px solid #bdb9b999;
-    background-color: #eae7e7ba;
-    background-color: #60452ab0;
-    box-shadow: 10px 10px 8px #bfb6b65e
-}
+.graphDiv {position: relative;clear: both;font-family: 'Exo 2', sans-serif;color: #f9d8c0;font-size: 1em;text-align:center;left: 0;right: 0;margin: 0 auto;/* width: 40%; */height: 178px;margin-top: -50px;border: 2px solid #bdb9b999;background-color: #eae7e7ba;background-color: #60452ab0;box-shadow: 10px 10px 8px #bfb6b65e;}
 
 .pointDiv {
     clear: both;
@@ -124,14 +104,13 @@ html,body {
 }
 
 .point {
-    width: 40%;
+    /* width: 40%; */
     left: 0;
     right: 0;
     margin: 0 auto;
     padding: 21px 1px;
     font-size: 2em;
     border: 2px solid #bdb9b999;
-
     background-color: #635140b0;
     box-shadow: 10px 10px 8px #bfb6b65e;
     color: #f9d8c0;
@@ -161,20 +140,17 @@ html,body {
 }
 
 .buts {
-    position: relative;
-    clear: both;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 50%;
+    margin-top: 0px;
+    padding: 10px;
+    height: 36px;
+    border: 0px solid black;
+    background-color: #4c47409c;
+    text-decoration: none;
+    font-size: .8em;
+    width: 580.3px;
 }
 
-.logBillBut {
-
-    width: 50%;
-    float: left;
-    text-align: center;
-}
+.logBillBut {width: 50%;float: left;text-align: center;}
 
 .setBut {
     border-left: 2px solid #ded1c7d1;
@@ -188,11 +164,10 @@ html,body {
     padding: 10px;
     height: 36px;
     border: 0px solid black;
-     background-color: #4c47409c;
+    background-color: #4c47409c;
     text-decoration: none;
     font-size: .8em;
-    width: 39%;
-
+    width: 580.3px;
 }
 
 a {

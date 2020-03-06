@@ -1,7 +1,7 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const path = require('path')
-
+const connection = require('./Config/connection')
 
 const app = express();
 
@@ -23,7 +23,20 @@ app.get('/signup', (req, res) => {
 })
 
 app.get('/dashboard', (req, res) => {
-    res.render('dashboard')
+    connection.query('SELECT * from user WHERE userID = ?', [1] ,(err, data) => {
+        if (err) {
+            throw err
+        }
+
+        
+
+        console.log(data)
+        res.render('dashboard', {
+            budget: data,
+            points: data
+        })
+    })
+    
 })
 
 app.get('/logBill', (req, res) => {
