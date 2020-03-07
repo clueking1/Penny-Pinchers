@@ -37,5 +37,23 @@
         <a href="./index.html" class="index"></a>
     </div>
 
-    <script type="text/javascript" src='JS/addbill.js'></script>
+    <script type="text/javascript" >
+        console.log('hiiiiii')
+        $('.bill-form').on('submit', function (e) {
+    e.preventDefault()
+
+    var updateCat = {
+        budget: $('.bill-form [name=amount]').val(),
+        cat: $('.dropdown-content').val()
+    }
+
+    console.log(updateCat)
+    console.log({{num}})
+    $.ajax('/logBill/{{num}}', {
+        type: 'PUT',
+        data: updateCat,
+  
+    })
+})
+    </script>
 </body>

@@ -117,19 +117,22 @@ app.get('/dashboard/:data', (req, res) => {
 
 
 app.get('/logBill/:data', (req, res) => {
-    
-    res.render('addbill')
+    let num = req.params.data
+    res.render('addbill', {
+        num
+    })
 })
 
 app.put('/logBill/:data', (req, res) => {
-   
+    
+    console.log(req.params)
     // connection.query("UPDATE user SET ?? = ? WHERE userID = ?",[req.body.cat, Number(req.body.budget), 1], (err,data) => {
     //     if (err) {
     //         throw err
     //     }
     //     console.log('success')
     // })
-    connection.query("SELECT ?? FROM user WHERE userID = ?",[req.body.cat, req.params.data], (err,data) => {
+    connection.query("SELECT ?? FROM user WHERE userID = ?",[req.body.cat, Number(req.params.data)], (err,data) => {
         if (err) {
             throw err
         }
@@ -145,13 +148,13 @@ app.put('/logBill/:data', (req, res) => {
         }
         function update(where, num) {
            let updateNum = Number(req.body.budget) + Number(num)
-            connection.query("UPDATE user SET ?? = ? WHERE userID = ?",[where, Number(updateNum), 1], (err,result) => {
+            connection.query("UPDATE user SET ?? = ? WHERE userID = ?",[where, Number(updateNum), Number(req.params.data)], (err,result) => {
             if (err) {
                 throw err
             }
             
             console.log('success')
-            res.redirect('/dashboard/' + req.params.data)
+            res.redirect('/dashboard/' + JSON.stringify(req.params.data))
         })
         }
         
@@ -161,16 +164,19 @@ app.put('/logBill/:data', (req, res) => {
 })
 
 app.get('/setBudget/:data', (req, res) => {
-    res.render('setbudget')
+    let num = req.params.data
+    res.render('setbudget', {
+        num
+    })
 })
 
 app.put('/setBudget/:data', (req, res) => {
-    //console.log(req.body)
-    connection.query('UPDATE user SET groceriesBudget = ?, transportationBudget = ?, diningBudget = ?, shoppingBudget = ? where userID = ?', [req.body.grocery, req.body.transportation, req.body.dining, req.body.shopping, req.params.data], (err, data) => {
+    console.log(req.body.grocery)
+    connection.query('UPDATE user SET groceriesBudget = ?, transportationBudget = ?, diningBudget = ?, shoppingBudget = ? where userID = ?', [req.body.grocery, Number(req.body.transportation), Number(req.body.dining), Number(req.body.shopping), Number(req.params.data)], (err, data) => {
         if (err) {
             throw err
         }
-        res.redirect('/dashboard/' + req.params.data)
+        res.redirect('/dashboard/' + JSON.stringify(req.params.data))
 })})
 
 

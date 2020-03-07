@@ -9,7 +9,7 @@ $('.bill-form').on('submit', function (e) {
 
     console.log(updateCat)
 
-    $.ajax('/logBill', {
+    $.ajax('/logBill/', {
         type: 'PUT',
         data: updateCat,
         success: function() {
