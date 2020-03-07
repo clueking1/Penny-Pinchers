@@ -23,7 +23,7 @@ app.get('/signup', (req, res) => {
 })
 
 app.post('/signup', (req, res) => {
-  orm.create("user", ["userName", "userPwd"], [req.body.userName , req.body.userPwd])
+  orm.create("user", ["userName", "userPwd"], [req.body.uname , req.body.pwd])
   res.render('signup');
   console.log(req.body);
   
