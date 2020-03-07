@@ -13,4 +13,4 @@ CREATE table user (
     diningBudget INT DEFAULT 200,
     shoppingBudget INT DEFAULT 200,
     PRIMARY KEY (userID)
-);
+); 
