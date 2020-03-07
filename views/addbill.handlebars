@@ -43,7 +43,7 @@
     e.preventDefault()
 
     var updateCat = {
-        budget: $('.bill-form [name=amount]').val(),
+        budget: $('.bill-form [name=amount]').val().trim(),
         cat: $('.dropdown-content').val()
     }
 
@@ -53,7 +53,11 @@
         type: 'PUT',
         data: updateCat,
   
-    })
+    }).then(
+        function() {
+           location.reload
+        }
+    )
 })
     </script>
 </body>

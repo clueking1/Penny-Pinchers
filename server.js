@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     console.log(req.body)
     connection.query('SELECT userID, userName, userPwd FROM user WHERE userName = ? AND userPwd = ?', [req.body.addMainUsername, req.body.addMainPassword], (err, data) => {
-        console.log(data.length) 
+        
         if (data.length === 0) {
             res.redirect('/')
         } else {
@@ -154,7 +154,7 @@ app.put('/logBill/:data', (req, res) => {
             }
             
             console.log('success')
-            res.redirect('/dashboard/' + JSON.stringify(req.params.data))
+            res.status(200).end()
         })
         }
         
@@ -176,7 +176,7 @@ app.put('/setBudget/:data', (req, res) => {
         if (err) {
             throw err
         }
-        res.redirect('/dashboard/' + JSON.stringify(req.params.data))
+        res.status(200).end()
 })})
 
 
