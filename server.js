@@ -27,13 +27,16 @@ app.get('/dashboard', (req, res) => {
         if (err) {
             throw err
         }
-        console.log(data)
+
         points = {
             groceriesBudget: 0,
             transportationBudget: 0,
             diningBudget: 0,
-            shoppingBudget: 0
+            shoppingBudget: 0,
+           
         }
+
+
         if (data[0].groceries > 0) {
           let number =  data[0].groceries / data[0].groceriesBudget * 100
           let finalPoints = 100 - number
@@ -66,16 +69,19 @@ app.get('/dashboard', (req, res) => {
           } else {
               points.shoppingBudget = 100
           }
-
+          
         render(data, points)
         
     })
 
     function render(data, points) {
-        console.log(points)
+        
+       let totalPoints = points.groceriesBudget + points.transportationBudget + points.diningBudget + points.shoppingBudget
+            
         res.render('dashboard', {
             budget: data,
-            points: points
+            points: points,
+            totalPoints
         })
     }
     
@@ -87,13 +93,42 @@ app.get('/logBill', (req, res) => {
 })
 
 app.put('/logBill', (req, res) => {
-    console.log(req)
-    connection.query("UPDATE user SET ?? = ? WHERE userID = ?",[req.body.cat, Number(req.body.budget), 1], (err,data) => {
+   
+    // connection.query("UPDATE user SET ?? = ? WHERE userID = ?",[req.body.cat, Number(req.body.budget), 1], (err,data) => {
+    //     if (err) {
+    //         throw err
+    //     }
+    //     console.log('success')
+    // })
+    connection.query("SELECT ?? FROM user WHERE userID = ?",[req.body.cat, 1], (err,data) => {
         if (err) {
             throw err
         }
-        console.log('success')
+        
+        if (data[0].groceries >= 0) {
+            update('groceries', data[0].groceries, res)
+        } else if (data[0].dining >= 0) {
+            update('dining', data[0].dining, res)
+        } else if (data[0].transportation >= 0) {
+            update('transportation', data[0].transportation, res )
+        }else {
+            update('shopping', data[0].shopping, res)
+        }
+        function update(where, num, res) {
+           let updateNum = Number(req.body.budget) + Number(num)
+            connection.query("UPDATE user SET ?? = ? WHERE userID = ?",[where, Number(updateNum), 1], (err,result) => {
+            if (err) {
+                throw err
+            }
+            
+            console.log('success')
+            
+        })
+        }
+        
     })
+   
+ 
 })
 
 app.get('/setBudget', (req, res) => {
@@ -101,7 +136,7 @@ app.get('/setBudget', (req, res) => {
 })
 
 app.put('/setBudget', (req, res) => {
-    console.log(req.body)
+    //console.log(req.body)
     connection.query('UPDATE user SET groceriesBudget = ?, transportationBudget = ?, diningBudget = ?, shoppingBudget = ? where userID = ?', [req.body.grocery, req.body.transportation, req.body.dining, req.body.shopping, 1], (err, data) => {
         if (err) {
             throw err

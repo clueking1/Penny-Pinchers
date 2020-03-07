@@ -14,7 +14,7 @@ $('.bill-form').on('submit', function (e) {
         data: updateCat
     }).then(
         function() {
-            location.reload()
+            location.reload();
         }
     )
 })
