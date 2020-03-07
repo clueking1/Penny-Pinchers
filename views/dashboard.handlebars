@@ -17,22 +17,22 @@
    
     <div class="dashSaveTitle">
          {{#each budget}}
-    <div class="dashSaveTitle">
+    
         <div class="grocDiv">
             <h3 class="dashGroc">Groceries</h3>
-            <p class="grocBudget">{{groceries}}</p>
+            <p class="grocBudget">{{groceriesBudget}}</p>
         </div>
         <div class="transDiv">
             <h3 class="dashtrans">Transportation</h3>
-            <p class="transBudget">{{transportation}}</p>
+            <p class="transBudget">{{transportationBudget}}</p>
         </div>
         <div class="diningDiv">
             <h3 class="dashDining">Dining</h3>
-            <p class="diningBudget">{{dining}}</p>
+            <p class="diningBudget">{{diningBudget}}</p>
         </div>
         <div class="shopDiv">
             <h3 class="dashShop">Shopping</h3>
-            <p class="shopBudget">{{shopping}}</p>
+            <p class="shopBudget">{{shoppingBudget}}</p>
         </div>
     </div>
         {{/each}}
@@ -54,16 +54,16 @@
     </div>
 
     <div class="pointDiv">
-        <p class="point">Total points: </p>
+        <p class="point">Total points: {{totalPoints}} </p>
     </div>
 
     <div class="buts">
         <div class="logBillBut">
-            <a href="/logBill">Log Bill</a>
+            <a href="/logBill/{{num}}">Log Bill</a>
         </div>
 
         <div class="setBut">
-            <a href="/setBudget">Set Budget</a>
+            <a href="/setBudget{{num}}">Set Budget</a>
         </div>
     </div>
 </div>
@@ -72,10 +72,8 @@
     
     //Chart 1 --------------------------------------
     
-    {{#each points}}
-
         var options = {
-            series: [Number({{groceriesPoints}})],
+            series: [Number({{points.groceriesBudget}})],
             chart: {
             height: 200,
             type: 'radialBar',
@@ -160,7 +158,7 @@
         //Chart 2 --------------------------------------
 
             var options = {
-            series: [Number({{transportationPoints}})],
+            series: [Number({{points.transportationBudget}})],
             chart: {
             height: 200,
             type: 'radialBar',
@@ -245,7 +243,7 @@
         //Chart 3 --------------------------------------
 
             var options = {
-            series:  [Number({{diningPoints}})],
+            series:  [Number({{points.diningBudget}})],
             chart: {
             height: 200,
             type: 'radialBar',
@@ -330,7 +328,7 @@
         //Chart 4 --------------------------------------
 
             var options = {
-            series: [Number({{shoppingPoints}})],
+            series: [Number({{points.shoppingBudget}})],
             chart: {
             height: 200,
             type: 'radialBar',
@@ -411,8 +409,6 @@
 
         var chart = new ApexCharts(document.querySelector("#chart4"), options);
         chart.render();
-
-       {{/each}}     
 
     </script>
 </body>
