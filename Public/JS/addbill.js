@@ -11,10 +11,9 @@ $('.bill-form').on('submit', function (e) {
 
     $.ajax('/logBill', {
         type: 'PUT',
-        data: updateCat
-    }).then(
-        function() {
-            location.reload();
+        data: updateCat,
+        success: function() {
+            alert('hi')
         }
-    )
+    })
 })
